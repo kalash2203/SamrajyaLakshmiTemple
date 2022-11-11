@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/light_yellow">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPgr_fragment_splash_intro_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_height="wrap_content"
+            android:text="Get In Touch"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="H No.276,Near Phase||Radient Lakeview Apartments,
+Karnasree Layout, Medhahalli,KR Puram,Bangalore - 560049"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="7382546474"
+            />
+                <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:text="8217463099"
+        />
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="info@samrajyalakshmitemple.com"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:text="Message Us"
+            />
+        <include android:layout_marginTop="@dimen/dp_30"
+            layout="@layout/layout_footer"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

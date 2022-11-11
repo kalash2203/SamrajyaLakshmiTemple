@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/light_yellow">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPgr_fragment_splash_intro_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:text="ABOUT US"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_counter_mantras"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:layout_marginHorizontal="20dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:layout_height="wrap_content"
+            android:text="Sri Samrajya Lakshmi Temple"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/black"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="
+“Sri KrishnaDevaraya” revered Goddess “Sri Samrajya Lakshmi”. Sri SamrajyaLakhmi’s temple is situated in Thonachagandanahalli, Madhugarai Thaluk, Thummakuru district of Karnataka. This prominent temple is now in the dilapidated state without any basic rituals (like lightening the lamp, oblation etc..,). “Sri Sri Kripaanidhi Guruji” whose aim is to develop the ancient temples has decided to restore this temple’s grandeur has established Shree Samrajya Lakshmi Maha Samstanam and initiated the construction of Sri Samrajya Lakshmi Temple along with the construction of the Veda Pathasala, Mada veedhi (point on the street adjoining the main temple), lake, Sri Chakra along with models of Astha padma, ancient sculptures (Sanatana) and construction of Goddess Sri Samrajya Lakhmi’s Kalyana Mandap. It will be a unique temple among all the ancient temples in India because the Goddess idol will be made with gold. We request every devotee to participate in this ‘Mahayaga’ that is carried out by Shree Samrajya Lakshmi Maha Samsthanam and attain the grace of Sri Samrajya Lakshmi Temple. "
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="Swarga Nidhi Seva Ashram Trust"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            app:fontFamily="@font/sergoeui"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content"
+            android:text="Swarga Nidhi Seva Ashram Trust was established in the year 2010 with the assistance of “Sri Sri Kripaanidhi Guruji”. Swarga Nidhi Seva Ashram Trust is established with a mission to revive righteousness and establish peace and harmony in this world. The trust is a non-for-profit, non-governmental organisation working towards creating universal brotherhood by alleviating the differences created by caste, religion, creed, race, wealth and profession."
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="DEVOTEES CAN SEND THEIR DONATIONS AT BELOW DETAILS"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_devotee"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            app:fontFamily="@font/sergoeui"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content"
+            android:text="Devotees who wish to be a part of Temple Construction can offer their offerings through our Donations Page or Directly to our Trust Bank Account."
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/brown"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:fontFamily="@font/sergoeui"
+            android:paddingVertical="3dp"
+            android:text="Donations"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/txt_devotee"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dp_8"
+            app:cardElevation="15dp"
+            android:backgroundTint="@color/light_yellow">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/brown"
+                    app:fontFamily="@font/segoe_ui_bold"
+                    android:layout_marginHorizontal="20dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:text="Swarga Nidhi Seva Ashram Trust\n
+Bank Name:Axis Bank\n
+Account No:916020074900888\n
+Account Type:Current Account\n
+IFSC Code:UTIB0000114\n
+Brunch Name:Indira Nagar Branch, Bangalore"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dp_8"
+            app:cardElevation="15dp"
+            android:backgroundTint="@color/light_yellow">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/brown"
+                    app:fontFamily="@font/segoe_ui_bold"
+                    android:layout_marginHorizontal="20dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:text="Shree Samrajya Lakshmi Maha Samsthanam\n
+Bank Name:Axis Bank\n
+Account No:920020020367331\n
+Account Type:Current Account\n
+IFSC Code:UTIB0003270\n
+Brunch Name:Kaggadasapura Branch, Bangalore" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <include android:layout_marginTop="@dimen/dp_30"
+            layout="@layout/layout_footer"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

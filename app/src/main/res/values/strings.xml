@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Samrajya Lakshmi Temple</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="terms_and_conditions"><u>Terms and Conditions</u></string>
+    <string name="refund_amp_cancellation_policy"><u><![CDATA[Refund & Cancellation Policy]]></u></string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+</resources>
