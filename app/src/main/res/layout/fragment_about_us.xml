@@ -111,9 +111,8 @@
             />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_register"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/brown"
             android:insetTop="0dp"
@@ -121,6 +120,7 @@
             android:fontFamily="@font/sergoeui"
             android:paddingVertical="3dp"
             android:text="Donations"
+            android:layout_gravity="center_horizontal"
             android:textColor="@color/white"
             app:cornerRadius="10dp"
             android:textAllCaps="false"
@@ -131,6 +131,7 @@
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/dp_20"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
             app:cardCornerRadius="@dimen/dp_8"
             app:cardElevation="15dp"
             android:backgroundTint="@color/light_yellow">

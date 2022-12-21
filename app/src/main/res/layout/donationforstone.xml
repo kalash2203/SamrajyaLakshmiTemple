@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.HomeFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,29 +37,23 @@
             android:layout_height="wrap_content"
             android:text="Donation for Stone"
             />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:scaleType="fitXY"
-            android:layout_marginHorizontal="@dimen/dp_20"
-            app:srcCompat="@drawable/struct_two"
-            android:layout_marginTop="@dimen/dp_30"
-            />
-
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/brown"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/black"
             app:fontFamily="@font/segoe_ui_bold"
             android:textAlignment="center"
-            android:textSize="@dimen/dp_30"
+            android:textSize="15sp"
             android:layout_height="wrap_content"
-            android:text="Donation for Temple Construction"
+            android:text="
+“Sri KrishnaDevaraya” revered Goddess “Sri Samrajya Lakshmi”. Sri SamrajyaLakhmi’s temple is situated in Thonachagandanahalli, Madhugarai Thaluk, Thummakuru district of Karnataka. This prominent temple is now in the dilapidated state without any basic rituals (like lightening the lamp, oblation etc..,). “Sri Sri Kripaanidhi Guruji” whose aim is to develop the ancient temples has decided to restore this temple’s grandeur has established Shree Samrajya Lakshmi Maha Samstanam and initiated the construction of Sri Samrajya Lakshmi Temple along with the construction of the Veda Pathasala, Mada veedhi (point on the street adjoining the main temple), lake, Sri Chakra along with models of Astha padma, ancient sculptures (Sanatana) and construction of Goddess Sri Samrajya Lakhmi’s Kalyana Mandap. It will be a unique temple among all the ancient temples in India because the Goddess idol will be made with gold. We request every devotee to participate in this ‘Mahayaga’ that is carried out by Shree Samrajya Lakshmi Maha Samsthanam and attain the grace of Sri Samrajya Lakshmi Temple. "
             />
-
+        <include android:layout_marginTop="@dimen/dp_30"
+            layout="@layout/layout_secondfooter"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
         <include android:layout_marginTop="@dimen/dp_30"
             layout="@layout/layout_footer"
             android:layout_height="wrap_content"
