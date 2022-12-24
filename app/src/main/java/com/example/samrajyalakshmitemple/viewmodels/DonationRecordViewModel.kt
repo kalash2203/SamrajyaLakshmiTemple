@@ -5,4 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import javax.inject.Inject
 
 class DonationRecordViewModel {
+    //asdfghjuikop;['
+   // ;lkjhgfdsadfghjkl;'":Lkjhgfdzxcvbnm,./'
 }
