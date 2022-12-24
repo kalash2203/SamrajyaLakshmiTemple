@@ -2,13 +2,7 @@ package com.example.samrajyalakshmitemple.retrofit
 
 import com.example.samrajyalakshmitemple.models.*
 import retrofit2.Response
-import retrofit2.http.DELETE
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface APIs {
 
@@ -25,22 +19,18 @@ interface APIs {
     ): Response<RemoveUserResponse>
 
     @GET("user/{email}")
-    suspend fun myProfileDetails(
+    suspend fun showMyProfileDetails(
         @Path("email") email:String
     ): Response<ShowMyProfileResponse>
 
     @GET("user")
-    suspend fun userPanelDetails(): Response<ShowUserPanelRecordResponse>
+    suspend fun showUserPanelDetails(): Response<ShowUserPanelRecordResponse>
 
     @GET("donation/{email}")
-    suspend fun myDonations(
+    suspend fun myDonationRecord(
         @Path("email") email:String
     ): Response<MyDonationRecordResponse>
 
     @GET("donation")
     suspend fun donationRecord(): Response<DonationRecordResponse>
-
-
-
-
 }

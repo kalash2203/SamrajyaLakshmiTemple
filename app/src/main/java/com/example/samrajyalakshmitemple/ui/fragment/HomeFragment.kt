@@ -1,16 +1,12 @@
 package com.example.samrajyalakshmitemple.ui.fragment
 
-import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.databinding.FragmentHomeBinding
 import com.example.samrajyalakshmitemple.ui.adapter.GetStartedSliderAdapter
 import com.example.samrajyalakshmitemple.viewmodels.HomeViewModel

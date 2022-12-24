@@ -1,10 +1,22 @@
 package com.example.samrajyalakshmitemple.viewmodels
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.example.samrajyalakshmitemple.models.DonationRecordResponse
+import com.example.samrajyalakshmitemple.repository.Repository
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class DonationRecordViewModel {
-    //asdfghjuikop;['
-   // ;lkjhgfdsadfghjkl;'":Lkjhgfdzxcvbnm,./'
+class DonationRecordViewModel @Inject constructor (val repo: Repository
+): MyViewModel() {
+
+    val donationLiveData: LiveData<DonationRecordResponse>
+        get() = repo.donationRecordResponse
+
+   fun DonationRecordResponse()
+   {
+     viewModelScope.launch {
+          repo.donationRecordResponse()
+      }
+   }
 }
