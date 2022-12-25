@@ -14,7 +14,7 @@ class ShowUserPanelRecordViewModel @Inject constructor (val repo: Repository
     val showUserPanelRecordLiveData: LiveData<ShowUserPanelRecordResponse>
         get() = repo.showUserPanelRecordResponse
 
-    fun ShowUserPanelRecordResponse()
+    fun showUserPanelRecordResponse()
     {
         viewModelScope.launch {
             repo.showUserPanelRecordResponse()
@@ -23,7 +23,7 @@ class ShowUserPanelRecordViewModel @Inject constructor (val repo: Repository
     val makeAdminLiveData: LiveData<MakeAdminResponse>
         get() = repo.makeAdminResponse
 
-    fun MakeAdminResponse(email:String,role:String) {
+    fun makeAdminResponse(email:String,role:String) {
         viewModelScope.launch {
             repo.makeAdminResponse(email,role)
         }
@@ -31,7 +31,7 @@ class ShowUserPanelRecordViewModel @Inject constructor (val repo: Repository
     val removeUserLiveData: LiveData<RemoveUserResponse>
         get() = repo.removeUserResponse
 
-    fun RemoveUserResponse(id:String)
+    fun removeUserResponse(id:String)
     {
         viewModelScope.launch {
             repo.removeUserResponse(id)

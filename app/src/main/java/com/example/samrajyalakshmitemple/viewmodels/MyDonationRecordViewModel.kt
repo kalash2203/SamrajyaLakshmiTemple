@@ -13,7 +13,7 @@ class MyDonationRecordViewModel @Inject constructor (val repo: Repository
     val myDonationRecordLiveData: LiveData<MyDonationRecordResponse>
         get() = repo.myDonationRecordResponse
 
-    fun MyDonationRecordResponse(email:String)
+    fun myDonationRecordResponse(email:String)
     {
         viewModelScope.launch {
             repo.myDonationRecordResponse(email)

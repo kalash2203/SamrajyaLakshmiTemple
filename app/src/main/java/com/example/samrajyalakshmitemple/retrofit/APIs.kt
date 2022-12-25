@@ -1,6 +1,8 @@
 package com.example.samrajyalakshmitemple.retrofit
 
 import com.example.samrajyalakshmitemple.models.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -18,7 +20,7 @@ interface APIs {
         @Path("id")id:String
     ): Response<RemoveUserResponse>
 
-    @GET("user/{email}")
+    @PUT("user/{email}")
     suspend fun showMyProfileDetails(
         @Path("email") email:String
     ): Response<ShowMyProfileResponse>
@@ -33,4 +35,18 @@ interface APIs {
 
     @GET("donation")
     suspend fun donationRecord(): Response<DonationRecordResponse>
+
+    @Multipart
+    @PATCH("user/{email}")
+    suspend fun editProfile(
+        @Path("email")email2:String,
+        @Part("name")name:RequestBody,
+        @Part("email")email:RequestBody,
+        @Part("phone")phone:RequestBody,
+        @Part("city")city:RequestBody,
+        @Part("state")state:RequestBody,
+        @Part("country")country:RequestBody,
+        @Part img: MultipartBody.Part
+    ): Response<EditProfileResponse>
+
 }
