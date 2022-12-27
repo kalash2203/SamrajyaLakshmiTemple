@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "239891064923",
+    "project_id": "samrajya-97f23",
+    "storage_bucket": "samrajya-97f23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239891064923:android:006237575ddf6bf2f3f77e",
+        "android_client_info": {
+          "package_name": "com.samrajyalakshmitemple.samrajyalakshmitemple"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239891064923-aa7li2cvceth2iop583229afn9408e9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samrajyalakshmitemple.samrajyalakshmitemple",
+            "certificate_hash": "4fe3666b088f2909630994bcf60e372ce1966c63"
+          }
+        },
+        {
+          "client_id": "239891064923-kfljlf90v7b189bhs69v3f6juca2icpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxQqj7auqlqrNU8LgVY4j5S4COap-JnjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239891064923-kfljlf90v7b189bhs69v3f6juca2icpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

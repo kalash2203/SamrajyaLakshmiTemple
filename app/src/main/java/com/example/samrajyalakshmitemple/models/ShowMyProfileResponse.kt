@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class ShowMyProfileResponse(
 @SerializedName("token" ) var token : String?  = null,
-@SerializedName("data"    ) var data    : User?    = User()
+@SerializedName("data"    ) var data    : User?    = User(),
+@SerializedName("message") var message : String?=null
+
 )
 
 data class User (

@@ -88,105 +88,25 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txt_number"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="25dp"
-                        android:fontFamily="@font/sergoeui"
-                        android:hint="phone_number"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_email">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/edt_number"
-                            android:fontFamily="@font/sergoeui"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txt_city"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="25dp"
-                        android:hint="city4"
-                        android:fontFamily="@font/sergoeui"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_number">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/edt_city"
-                            android:fontFamily="@font/sergoeui"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txt_state"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:fontFamily="@font/sergoeui"
-                        android:layout_marginTop="25dp"
-                        android:hint="state_province"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_city">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/edt_state"
-                            android:fontFamily="@font/sergoeui"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txt_country"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sergoeui"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginTop="25dp"
-                        android:hint="country"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_state">
-
-                        <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/edt_country"
-                            android:fontFamily="@font/sergoeui"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/txt_password"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="25dp"
-                        android:hint="password"
                         android:fontFamily="@font/sergoeui"
+                        android:hint="Password"
                         app:endIconMode="password_toggle"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_country">
+                        app:layout_constraintTop_toBottomOf="@id/txt_email">
 
                         <androidx.appcompat.widget.AppCompatEditText
                             android:id="@+id/edt_password"
                             android:fontFamily="@font/sergoeui"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
+
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -200,8 +120,8 @@
                         android:insetBottom="0dp"
                         android:fontFamily="@font/sergoeui"
                         android:paddingVertical="3dp"
-                        android:text="@string/sign_up"
-                        android:textColor="@color/light_blue"
+                        android:text="Sign Up"
+                        android:textColor="@color/black"
                         app:cornerRadius="8dp"
                         app:layout_constraintTop_toBottomOf="@id/txt_password"
                         app:strokeColor="@color/light_blue"
@@ -215,9 +135,31 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginHorizontal="20dp"
                         android:fontFamily="@font/sergoeui"
-                        android:text="already_account"
+                        android:text="Already have an Account? Please Login"
                         android:textSize="17sp"
+                        android:textColor="@color/black"
                         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_new_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@color/white"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:fontFamily="@font/sergoeui"
+
+                        android:paddingVertical="3dp"
+                        android:text="CONTINUE WITH GOOGLE"
+                        android:textColor="@color/black"
+                        app:cornerRadius="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/txt_new_account"
+                        app:strokeColor="@color/light_blue"
+                        app:strokeWidth="1dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

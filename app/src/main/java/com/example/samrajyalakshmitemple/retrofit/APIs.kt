@@ -10,7 +10,7 @@ interface APIs {
 
     @FormUrlEncoded
     @PUT("user/admin/{email}")
-    suspend fun makeAdmin(
+    suspend fun changeRole(
         @Path("email")email:String,
         @Field("role") role: String
     ): Response<MakeAdminResponse>
@@ -22,7 +22,7 @@ interface APIs {
 
     @PUT("user/{email}")
     suspend fun showMyProfileDetails(
-        @Path("email") email:String
+        @Path("email") email:String?
     ): Response<ShowMyProfileResponse>
 
     @GET("user")
@@ -47,6 +47,14 @@ interface APIs {
         @Part("state")state:RequestBody,
         @Part("country")country:RequestBody,
         @Part img: MultipartBody.Part
+    ): Response<EditProfileResponse>
+
+
+    @FormUrlEncoded
+    @PATCH("user/{email}")
+    suspend fun signUpUser(
+        @Path("email")email2:String,
+        @Part("name")name:String,
     ): Response<EditProfileResponse>
 
 }

@@ -1,60 +1,106 @@
 package com.example.samrajyalakshmitemple.ui.fragment
-
-import android.os.Bundle
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.example.samrajyalakshmitemple.R
+import com.example.samrajyalakshmitemple.databinding.FragmentRegisterBinding
+import com.example.samrajyalakshmitemple.viewModelFactory.RegisterViewModelFactory
+import com.example.samrajyalakshmitemple.viewModelFactory.ShowMyProfileViewModelFactory
+import com.example.samrajyalakshmitemple.viewmodels.RegisterViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
+     private val registerViewModel by viewModels<RegisterViewModel> {
+         RegisterViewModelFactory(repository)
+     }
+    val TAG="RegisterFragment"
+    private lateinit var auth: FirebaseAuth
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRegisterBinding
+            = FragmentRegisterBinding::inflate
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class RegisterFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun setup() {
+        auth=FirebaseAuth.getInstance()
+        binding?.txtNewAccount?.setOnClickListener {
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                .navigate(R.id.action_registerFragment_to_login)
         }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
-    }
+            binding?.btnRegister?.setOnClickListener {
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+              if(validation())
+              {
+                  register(
+                      binding?.edtEmail?.text.toString().trim(),
+                      binding?.edtPassword?.text.toString().trim()
+                  )
+              }
+            }
+
+    }
+    fun register(email:String,password:String) {
+        auth.createUserWithEmailAndPassword(email,password)
+            //return type of addOnCompleteListener is task.
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
+             registerUser(email)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        requireContext(), "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
                 }
             }
+    }
+     fun registerUser(email: String)
+     {
+         registerViewModel.showMyProfileResponse(email) // register user on server
+         registerViewModel.showMyProfileLiveData.observe(viewLifecycleOwner, Observer {
+             if(it.message=="user created success")
+             {
+                 savedPrefManager.putToken(it.token)
+                 registerViewModel.signUpUser(email,binding?.edtName?.text?.trim().toString())
+             }
+         })
+         registerViewModel.signUpLiveData.observe(viewLifecycleOwner, Observer {
+             if(it.message=="user updated success"){
+                 savedPrefManager.putEmail(email)
+
+                 Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                     .navigate(R.id.action_registerFragment_to_profileFragment)
+             }
+         })
+
+
+
+     }
+    fun validation(): Boolean {
+
+        if (binding?.edtName?.text.toString().trim() { it <= ' ' }.isEmpty()) {
+            Toast.makeText(requireContext(), "First Name Field is Empty", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        if (binding?.edtEmail?.text.toString().trim() { it <= ' ' }.isEmpty()) {
+            Toast.makeText(requireContext(), "Email Field is Empty", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (binding?.edtPassword?.text.toString().trim() { it <= ' ' }.isEmpty()) {
+            Toast.makeText(requireContext(), "Password Field is Empty", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        return true
     }
 }

@@ -120,8 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="30dp"
-                        android:text="forget_password_reset_password"
-
+                        android:text="Forget Password?"
                         android:textSize="17sp"
                         app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
@@ -133,9 +132,28 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
-                        android:text="new_to_guru_maharaj_create_new_account"
+                        android:text="New to this site? Create account"
                         android:textSize="17sp"
                         app:layout_constraintTop_toBottomOf="@id/txt_forgot_pswrd" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_new_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@color/white"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:fontFamily="@font/sergoeui"
+
+                        android:paddingVertical="3dp"
+                        android:text="CONTINUE WITH GOOGLE"
+                        android:textColor="@color/black"
+                        app:cornerRadius="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/txt_new_account"
+                        app:strokeColor="@color/light_blue"
+                        app:strokeWidth="1dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

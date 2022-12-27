@@ -1,59 +1,98 @@
 package com.example.samrajyalakshmitemple.ui.fragment
-
-import android.os.Bundle
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.Toast
+import androidx.navigation.Navigation
 import com.example.samrajyalakshmitemple.R
+import com.example.samrajyalakshmitemple.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+    val TAG="LoginFragment"
+    private lateinit var auth: FirebaseAuth
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
+            = FragmentLoginBinding::inflate
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class LoginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun setup() {
+        auth=FirebaseAuth.getInstance()
+        binding?.txtNewAccount?.setOnClickListener {
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                .navigate(R.id.action_login_to_registerFragment)
         }
+        binding?.txtForgotPswrd?.setOnClickListener {
+            if(validation2())
+            {
+                forgotPassword()
+            }
+        }
+        binding?.btnLogin?.setOnClickListener {
+
+            if(validation())
+            {
+                login(
+                    binding?.edtEmail?.text.toString().trim(),
+                    binding?.edtPassword?.text.toString().trim()
+                )
+            }
+        }
+
+    }
+    fun login(email:String,password:String) {
+        auth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "loginWithEmail:success")
+                    Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                        .navigate(R.id.action_login_to_profileFragment)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "loginWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        requireContext(), "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+    fun validation(): Boolean {
+        if (binding?.edtEmail?.text.toString().trim() { it <= ' ' }.isEmpty()) {
+            Toast.makeText(requireContext(), "Email Field is Empty", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (binding?.edtPassword?.text.toString().trim() { it <= ' ' }.isEmpty()) {
+            Toast.makeText(requireContext(), "Password Field is Empty", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
+        return true
+    }
+    //validation of email and password editfields
+    fun validation2() : Boolean{
+        if (binding?.edtEmail?.text?.toString()?.trim(){it <= ' '}?.isEmpty()==true){
+            Toast.makeText(requireContext(), "Email Field is Empty", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    //function of sending email to registered email address for resetting the password
+    fun forgotPassword(){
+        auth.sendPasswordResetEmail(binding?.edtEmail?.text?.trim().toString())
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Show the toast message and finish the forgot password activity to go back to the login screen.
+                    Toast.makeText(
+                        requireContext(),
+                        "Email sent sucessfully",
+                        Toast.LENGTH_LONG
+                    ).show()
+
                 }
             }
     }

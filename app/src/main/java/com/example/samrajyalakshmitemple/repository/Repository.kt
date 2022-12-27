@@ -1,6 +1,5 @@
 package com.example.samrajyalakshmitemple.repository
 
-import android.media.Image
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.samrajyalakshmitemple.di.NetworkModule
@@ -44,6 +43,11 @@ class Repository {
         get() = _editProfileResponse
 
 
+    private val _signUpResponse = MutableLiveData<EditProfileResponse>()
+    val signUpResponse: LiveData<EditProfileResponse>
+        get() = _signUpResponse
+
+
 
     suspend fun donationRecordResponse() {
         val result = NetworkModule.getNetworkModule().getApi().donationRecord()
@@ -53,7 +57,7 @@ class Repository {
     }
 
     suspend fun makeAdminResponse(email: String, role: String) {
-        val result = NetworkModule.getNetworkModule().getApi().makeAdmin(email, role)
+        val result = NetworkModule.getNetworkModule().getApi().changeRole(email, role)
         if (result.isSuccessful && result.body() != null) {
             _makeAdminResponse.postValue((result.body()))
         }
@@ -73,7 +77,7 @@ class Repository {
         }
     }
 
-    suspend fun showMyProfileResponse(email: String) {
+    suspend fun showMyProfileResponse(email: String?) {
         val result = NetworkModule.getNetworkModule().getApi().showMyProfileDetails(email)
         if (result.isSuccessful && result.body() != null) {
             _showMyProfileResponse.postValue((result.body()))
@@ -95,10 +99,20 @@ class Repository {
     }
 
     suspend fun editProfileResponse(email2:String,name:RequestBody,email: RequestBody,phone:RequestBody,city:RequestBody,state:RequestBody,country:RequestBody,img:MultipartBody.Part) {
-        val result = NetworkModule.getNetworkModule().getApi().editProfile(email2,name,email,phone,city,state, country, img)
+        val result = NetworkModule.getNetworkModule().getApi()
+            .editProfile(email2, name, email, phone, city, state, country, img)
         if (result.isSuccessful && result.body() != null) {
             _editProfileResponse.postValue((result.body()))
         }
     }
+
+
+    suspend fun signUpUser(email:String,name:String) {
+        val result = NetworkModule.getNetworkModule().getApi().signUpUser( email,name)
+        if (result.isSuccessful && result.body() != null) {
+            _signUpResponse.postValue((result.body()))
+        }
+    }
+
 }
 

@@ -24,7 +24,7 @@ class ShowMyProfileViewModel @Inject constructor (val repo: Repository
     val editProfileLiveData: LiveData<EditProfileResponse>
     get()= repo.editProfileResponse
 
-    fun showMyProfileResponse(email: String)
+    fun showMyProfileResponse(email: String?)
     {
         viewModelScope.launch {
             repo.showMyProfileResponse(email)

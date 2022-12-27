@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_yellow"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:background="@color/light_yellow"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:text="welcome to dashboard"
+            android:textSize="@dimen/sp_25"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/yellow"/>
+
+        <View
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/yellow"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:fontFamily="@font/sergoeui"
+            android:textSize="@dimen/sp_20"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/red"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/lyt_carview"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp">
+<ImageView
+    android:id="@+id/image_view"
+    android:layout_width="@dimen/dimen_50dp"
+    android:layout_height="@dimen/dimen_50dp"
+app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_name"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/sergoeui"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name - "
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/image_view"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_name_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+app:layout_constraintTop_toBottomOf="@id/image_view"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintStart_toStartOf="@+id/txt_number_field"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_number"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Number - "
+                    android:fontFamily="@font/sergoeui"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txt_name"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/sergoeui"
+                    android:id="@+id/txt_number_field"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_name"
+                    app:layout_constraintStart_toEndOf="@id/txt_number"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/sergoeui"
+                    android:id="@+id/txt_email"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email - "
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txt_number"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_email_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintStart_toStartOf="@+id/txt_number_field"
+                    app:layout_constraintTop_toBottomOf="@id/txt_number" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_city"
+                    android:fontFamily="@font/sergoeui"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City - "
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txt_email"
+
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_city_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintStart_toStartOf="@+id/txt_email_field"
+
+                    app:layout_constraintTop_toBottomOf="@id/txt_email" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_state"
+                    android:fontFamily="@font/sergoeui"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State - "
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txt_city"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/sergoeui"
+                    android:id="@+id/txt_state_field"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_city"
+                    app:layout_constraintStart_toStartOf="@id/txt_city_field"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:fontFamily="@font/sergoeui"
+                    android:id="@+id/txt_country"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country - "
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txt_state"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_country_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintStart_toStartOf="@+id/txt_city_field"
+                    app:layout_constraintTop_toBottomOf="@id/txt_state" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:fontFamily="@font/sergoeui"
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:backgroundTint="@color/yellow"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:textAllCaps="false"
+                    android:paddingHorizontal="@dimen/dp_30"
+                    android:paddingVertical="3dp"
+                    android:text="update profile"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_country" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        <include layout="@layout/layout_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"/>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

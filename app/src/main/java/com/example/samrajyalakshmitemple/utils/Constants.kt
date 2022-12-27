@@ -8,6 +8,19 @@ object Constants {
     const val BASE_URL = "https://donation-ogzl.onrender.com/"
 const val BASE_URL_TWO="https://api.imgbb.com/"
 const val ISLOGIN="ISLOGIN"
+    const val NAME  = "name"
+    const val EMAIL  = "email"
+    const val NUMBER = "number"
+    const val CITY = "city"
+    const val STATE ="state"
+    const val COUNTRY = "country"
+    const val CURRENCY_TYPE = "currency_type"
+    const val AMOUNT = "amount"
+    const val DESCRIPTION = "desc"
+    const val ROLE="role"
+    const val IMAGE="image"
+    const val TOKEN="token"
+
 
 
 
