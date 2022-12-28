@@ -15,6 +15,6 @@ interface APIsTwo {
     @POST("1/upload")
     suspend fun uploadImage(
         @Query("key")key:String="68cb5fb5d48334a60f021c30aff06ada",
-        @Part image: MultipartBody.Part
+        @Part image: MultipartBody.Part?
     ): Response<UploadImageResponse>
 }

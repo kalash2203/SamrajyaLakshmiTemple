@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:weightSum="5"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/user_date"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text="2022-11-09"/>
+
+    <TextView
+        android:id="@+id/user_tr_id"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text="8382838634683787483274"/>
+
+
+    <TextView
+        android:id="@+id/user_description"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text="Donation for Stone"/>
+    <TextView
+        android:id="@+id/user_amount"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text="120 INR"/>
+
+    <TextView
+        android:id="@+id/user_invoice"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        tools:text=""/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

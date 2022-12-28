@@ -23,15 +23,15 @@ class ShowUserPanelRecordViewModel @Inject constructor (val repo: Repository
     val makeAdminLiveData: LiveData<MakeAdminResponse>
         get() = repo.makeAdminResponse
 
-    fun makeAdminResponse(email:String,role:String) {
+    fun changeRole(email:String?,role:String) {
         viewModelScope.launch {
-            repo.makeAdminResponse(email,role)
+            repo.changeRole(email,role)
         }
     }
     val removeUserLiveData: LiveData<RemoveUserResponse>
         get() = repo.removeUserResponse
 
-    fun removeUserResponse(id:String)
+    fun removeUserResponse(id:String?)
     {
         viewModelScope.launch {
             repo.removeUserResponse(id)

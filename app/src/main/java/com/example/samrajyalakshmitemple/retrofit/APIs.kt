@@ -11,13 +11,13 @@ interface APIs {
     @FormUrlEncoded
     @PUT("user/admin/{email}")
     suspend fun changeRole(
-        @Path("email")email:String,
+        @Path("email")email:String?,
         @Field("role") role: String
     ): Response<MakeAdminResponse>
 
     @DELETE("user/{id}")
     suspend fun removeUser(
-        @Path("id")id:String
+        @Path("id")id:String?
     ): Response<RemoveUserResponse>
 
     @PUT("user/{email}")
@@ -36,17 +36,17 @@ interface APIs {
     @GET("donation")
     suspend fun donationRecord(): Response<DonationRecordResponse>
 
-    @Multipart
+    @FormUrlEncoded
     @PATCH("user/{email}")
     suspend fun editProfile(
         @Path("email")email2:String,
-        @Part("name")name:RequestBody,
-        @Part("email")email:RequestBody,
-        @Part("phone")phone:RequestBody,
-        @Part("city")city:RequestBody,
-        @Part("state")state:RequestBody,
-        @Part("country")country:RequestBody,
-        @Part img: MultipartBody.Part
+        @Field("name")name:String?,
+        @Field("email")email:String?,
+        @Field("phone")phone:String?,
+        @Field("city")city:String?,
+        @Field("state")state:String?,
+        @Field("country")country:String?,
+        @Field("img") img: String?
     ): Response<EditProfileResponse>
 
 

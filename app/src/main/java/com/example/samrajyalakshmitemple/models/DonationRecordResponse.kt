@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class DonationRecordResponse (
     @SerializedName("status"  ) var status  : Boolean?        = null,
     @SerializedName("message" ) var message : String?         = null,
-    @SerializedName("data"    ) var data    : ArrayList<Data> = arrayListOf()
+    @SerializedName("data"    ) var data    : ArrayList<Data5> = arrayListOf()
 )
 
 data class Data5 (

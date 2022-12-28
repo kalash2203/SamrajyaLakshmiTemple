@@ -18,11 +18,7 @@ class ShowMyProfileViewModel @Inject constructor (val repo: Repository
     val showMyProfileLiveData: LiveData<ShowMyProfileResponse>
         get() = repo.showMyProfileResponse
 
-    val uploadImageLiveData: LiveData<UploadImageResponse>
-        get() = repo.uploadImageResponse
 
-    val editProfileLiveData: LiveData<EditProfileResponse>
-    get()= repo.editProfileResponse
 
     fun showMyProfileResponse(email: String?)
     {
@@ -31,16 +27,6 @@ class ShowMyProfileViewModel @Inject constructor (val repo: Repository
         }
     }
 
-    fun uploadImageResponse(image:MultipartBody.Part)
-    {
-        viewModelScope.launch {
-            repo.uploadImageResponse(image)
-        }
-    }
-    fun editProfileResponse(email2:String, name: RequestBody, email: RequestBody, phone: RequestBody, city: RequestBody, state: RequestBody, country: RequestBody, img:MultipartBody.Part)
-    {
-        viewModelScope.launch {
-            repo.editProfileResponse(email2, name, email, phone, city, state, country, img)
-        }
-    }
+
+
 }

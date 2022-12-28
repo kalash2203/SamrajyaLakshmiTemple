@@ -6,7 +6,6 @@ import com.example.samrajyalakshmitemple.di.NetworkModule
 import com.example.samrajyalakshmitemple.di.NetworkModuleImageUpload
 import com.example.samrajyalakshmitemple.models.*
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 
 class Repository {
     private val _donationRecordResponse = MutableLiveData<DonationRecordResponse>()
@@ -56,7 +55,7 @@ class Repository {
         }
     }
 
-    suspend fun makeAdminResponse(email: String, role: String) {
+    suspend fun changeRole(email: String?, role: String) {
         val result = NetworkModule.getNetworkModule().getApi().changeRole(email, role)
         if (result.isSuccessful && result.body() != null) {
             _makeAdminResponse.postValue((result.body()))
@@ -70,7 +69,7 @@ class Repository {
         }
     }
 
-    suspend fun removeUserResponse(id: String) {
+    suspend fun removeUserResponse(id: String?) {
         val result = NetworkModule.getNetworkModule().getApi().removeUser(id)
         if (result.isSuccessful && result.body() != null) {
             _removeUserResponse.postValue((result.body()))
@@ -91,14 +90,15 @@ class Repository {
         }
     }
 
-    suspend fun uploadImageResponse(image:MultipartBody.Part) {
+    suspend fun uploadImageResponse(image:MultipartBody.Part?) {
         val result = NetworkModuleImageUpload.getNetworkModule().getApi().uploadImage(image = image)
         if (result.isSuccessful && result.body() != null) {
             _uploadImageResponse.postValue((result.body()))
         }
     }
 
-    suspend fun editProfileResponse(email2:String,name:RequestBody,email: RequestBody,phone:RequestBody,city:RequestBody,state:RequestBody,country:RequestBody,img:MultipartBody.Part) {
+    suspend fun editProfileResponse(email2:String, name:String?, email: String?, phone:String?, city:String?,
+                                    state:String?, country:String?, img:String?) {
         val result = NetworkModule.getNetworkModule().getApi()
             .editProfile(email2, name, email, phone, city, state, country, img)
         if (result.isSuccessful && result.body() != null) {
