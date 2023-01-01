@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/light_yellow">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPgr_fragment_splash_intro_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:srcCompat="@drawable/struct_five"
+            android:layout_marginTop="@dimen/dp_30"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/brown"
+            app:fontFamily="@font/segoe_ui_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:text="Donation for Stone"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/black"
+            app:fontFamily="@font/sergoeui"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="
+“Sri KrishnaDevaraya” revered Goddess “Sri Samrajya Lakshmi”. Sri SamrajyaLakhmi’s temple is situated in Thonachagandanahalli, Madhugarai Thaluk, Thummakuru district of Karnataka. This prominent temple is now in the dilapidated state without any basic rituals (like lightening the lamp, oblation etc..,).\n\n
+
+“Sri Sri Kripaanidhi Guruji” whose aims to restore this temple’s grandeur has established Shree Samrajya Lakshmi Maha Samstanam and initiated the construction of Sri Samrajya Lakshmi Temple along with the construction of the Veda Pathasala, Mada veedhi (point on the street adjoining the main temple), lake, Sri Chakra along with models of Astha padma, ancient sculptures (Sanatana) and construction of Goddess Sri Samrajya Lakhmi’s Kalyana Mandap.\n\n
+
+It will be a unique temple among all the ancient temples in India because the Goddess idol will be made with gold. We request every devotee to participate in this ‘Mahayaga’ that is carried out by Shree Samrajya Lakshmi Maha Samsthanam and attain the grace of Sri Samrajya Lakshmi Temple."            />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="30dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:layout_marginTop="30dp"
+                    android:text="Payment Info"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_login2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:layout_marginTop="60dp"
+                    android:text="Payment with Stripe"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toTopOf="@id/txt_login" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="45dp"
+                    android:hint="Donation Amount"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_login2">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_name"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:hint="Description"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_name">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_email"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_number"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/sergoeui"
+                    android:hint="Email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_email">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_number"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_city"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:hint="Name"
+                    android:fontFamily="@font/sergoeui"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_number">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_city"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_state"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/sergoeui"
+                    android:layout_marginTop="25dp"
+                    android:hint="Phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_city">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_state"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_country"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sergoeui"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:hint="Country"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_state">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_country"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    app:layout_constraintTop_toBottomOf="@id/txt_country"
+                    android:id="@+id/txt_donation_type"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_donationStripe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/brown"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:fontFamily="@font/sergoeui"
+                    android:paddingVertical="3dp"
+                    android:text="Donation with stripe"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_donation_type"
+                    app:strokeColor="@color/light_blue"
+                    app:strokeWidth="1dp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    app:layout_constraintTop_toBottomOf="@id/btn_donationStripe"
+                    android:id="@+id/txt_or"
+                    android:text="OR"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:textSize="@dimen/sp_25"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_paytm_amount"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sergoeui"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:hint="Donation Amount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_or">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_paytm_amount"
+                        android:fontFamily="@font/sergoeui"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_donationPaytm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/brown"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:fontFamily="@font/sergoeui"
+                    android:paddingVertical="3dp"
+                    android:text="Donation with Paytm"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_paytm_amount"
+                    app:strokeColor="@color/light_blue"
+                    app:strokeWidth="1dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include android:layout_marginTop="@dimen/dp_30"
+            layout="@layout/layout_footer"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

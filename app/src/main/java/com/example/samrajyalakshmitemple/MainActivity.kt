@@ -1,19 +1,15 @@
 package com.example.samrajyalakshmitemple
 
-import android.Manifest.permission.READ_SMS
-import android.Manifest.permission.RECEIVE_SMS
-import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.example.samrajyalakshmitemple.databinding.ActivityMainBinding
+import com.example.samrajyalakshmitemple.utils.Constants
 import com.example.samrajyalakshmitemple.utils.Constants.PUBLISHABLE_KEY_STRIPE_DEBUG
 import com.example.samrajyalakshmitemple.utils.SavedPrefManager
 import com.stripe.android.PaymentConfiguration
@@ -33,32 +29,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
         savedPrefManager = SavedPrefManager(this)
-        if (ContextCompat.checkSelfPermission(
-                this@MainActivity, READ_SMS
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this@MainActivity,
-                arrayOf(READ_SMS, RECEIVE_SMS),
-                101
-            )
-        }
-
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-
-        PaymentConfiguration.init(
-
-            applicationContext,
-
-            PUBLISHABLE_KEY_STRIPE_DEBUG
-
-        )
-
-
-
+        PaymentConfiguration.init(applicationContext, PUBLISHABLE_KEY_STRIPE_DEBUG)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -78,6 +53,31 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(binding!!.navView, navController)
 
+
+        hideItem()
+        setLoginLogoutBtn()
+
+    }
+
+    private fun hideItem() {
+        if (!savedPrefManager.isLogin()) {
+            binding?.navView?.menu?.findItem(R.id.dashboard)?.isVisible = false
+            if (savedPrefManager.checkRole()== Constants.USER){
+                binding?.navView?.menu?.findItem(R.id.donation_record)?.isVisible = false
+                binding?.navView?.menu?.findItem(R.id.user_panel)?.isVisible = false
+            }else {
+                binding?.navView?.menu?.findItem(R.id.donation_record)?.isVisible = true
+                binding?.navView?.menu?.findItem(R.id.user_panel)?.isVisible = true
+            }
+        }
+    }
+
+    private fun setLoginLogoutBtn(){
+        if (savedPrefManager.isLogin()) {
+
+        }else{
+
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

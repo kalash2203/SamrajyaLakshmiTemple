@@ -20,6 +20,8 @@ const val ISLOGIN="ISLOGIN"
     const val ROLE="role"
     const val IMAGE="image"
     const val TOKEN="token"
+    const val USER = "user"
+    const val ADMIN = "admin"
 
 
 

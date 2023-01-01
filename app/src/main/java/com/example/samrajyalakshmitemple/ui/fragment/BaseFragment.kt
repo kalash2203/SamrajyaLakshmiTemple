@@ -8,8 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.repository.Repository
+import com.example.samrajyalakshmitemple.utils.Constants
 import com.example.samrajyalakshmitemple.utils.SavedPrefManager
+import com.google.android.material.navigation.NavigationView
 
 abstract class BaseFragment<T: ViewBinding>  : Fragment() {
     protected var binding: T? = null
@@ -66,5 +69,19 @@ abstract class BaseFragment<T: ViewBinding>  : Fragment() {
         val alert: AlertDialog = alertDialog.create()
         alert.setCanceledOnTouchOutside(false)
         alert.show()
+    }
+
+    open fun showItem() {
+        if (!savedPrefManager.isLogin()) {
+            val view5 = requireActivity().findViewById<NavigationView>(R.id.nav_view)
+            view5?.menu?.findItem(R.id.dashboard)?.isVisible = true
+            if (savedPrefManager.checkRole()==Constants.USER){
+                view5?.menu?.findItem(R.id.donation_record)?.isVisible = false
+                view5?.menu?.findItem(R.id.user_panel)?.isVisible = false
+            }else {
+                view5?.menu?.findItem(R.id.donation_record)?.isVisible = true
+                view5?.menu?.findItem(R.id.user_panel)?.isVisible = true
+            }
+        }
     }
 }

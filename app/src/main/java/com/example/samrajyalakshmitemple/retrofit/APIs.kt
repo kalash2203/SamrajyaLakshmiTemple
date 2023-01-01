@@ -1,8 +1,6 @@
 package com.example.samrajyalakshmitemple.retrofit
 
 import com.example.samrajyalakshmitemple.models.*
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.*
 
