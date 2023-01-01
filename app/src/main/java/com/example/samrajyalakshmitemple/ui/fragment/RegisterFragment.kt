@@ -72,6 +72,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
                  savedPrefManager.putToken(it.token)
                  ApplicationClass().setToken(savedPrefManager.getToken()!!)
                  savedPrefManager.putLogin(true)
+                 showItem()
                  savedPrefManager.putRole(Constants.USER)
                  registerViewModel.signUpUser(email,binding?.edtName?.text?.trim().toString())
              }

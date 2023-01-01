@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_home_to_pooja"
             app:destination="@id/pooja" />
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/about"
@@ -23,6 +26,9 @@
         <action
             android:id="@+id/action_about_to_donations"
             app:destination="@id/donations" />
+        <action
+            android:id="@+id/action_about_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/pooja"
@@ -31,21 +37,36 @@
         <action
             android:id="@+id/action_pooja_to_donations"
             app:destination="@id/donations" />
+        <action
+            android:id="@+id/action_pooja_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/donations"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.DonationsFragment"
-        android:label="DonationsFragment" />
+        android:label="DonationsFragment" >
+        <action
+            android:id="@+id/action_donations_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <fragment
         android:id="@+id/info"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.InformationCentresFragment"
         android:label="fragment_information_centres"
-        tools:layout="@layout/fragment_information_centres" />
+        tools:layout="@layout/fragment_information_centres" >
+        <action
+            android:id="@+id/action_info_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <fragment
         android:id="@+id/contact"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.ContactUsFragment"
         android:label="fragment_contact_us"
-        tools:layout="@layout/fragment_contact_us" />
+        tools:layout="@layout/fragment_contact_us" >
+        <action
+            android:id="@+id/action_contact_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <fragment
         android:id="@+id/login"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.LoginFragment"
@@ -75,23 +96,46 @@
         <action
             android:id="@+id/action_my_profile_to_bottomSheetUpdateProfileDetailsFragment"
             app:destination="@id/bottomSheetUpdateProfileDetailsFragment" />
+        <action
+            android:id="@+id/action_my_profile_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/donation_record"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.DonationRecordFragment"
         android:label="fragment_donation_record"
-        tools:layout="@layout/fragment_donation_record" />
+        tools:layout="@layout/fragment_donation_record" >
+        <action
+            android:id="@+id/action_donation_record_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <fragment
         android:id="@+id/user_panel"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.UserPanelFragment"
         android:label="fragment_user_panel"
-        tools:layout="@layout/fragment_user_panel" />
+        tools:layout="@layout/fragment_user_panel" >
+        <action
+            android:id="@+id/action_user_panel_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <fragment
         android:id="@+id/my_donation"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.MyDonationsFragment"
-        android:label="MyDonationsFragment" />
+        android:label="MyDonationsFragment" >
+        <action
+            android:id="@+id/action_my_donation_to_login"
+            app:destination="@id/login" />
+    </fragment>
     <dialog
         android:id="@+id/bottomSheetUpdateProfileDetailsFragment"
         android:name="com.example.samrajyalakshmitemple.ui.fragment.BottomSheetUpdateProfileDetailsFragment"
         android:label="BottomSheetUpdateProfileDetailsFragment" />
+    <fragment
+        android:id="@+id/donationForTempleStone"
+        android:name="com.example.samrajyalakshmitemple.ui.fragment.DonationForTempleStone"
+        android:label="DonationForTempleStone" >
+        <action
+            android:id="@+id/action_donationForTempleStone_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>

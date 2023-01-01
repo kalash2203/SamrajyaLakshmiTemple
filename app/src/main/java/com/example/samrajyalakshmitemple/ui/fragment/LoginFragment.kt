@@ -47,6 +47,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                     Log.d(TAG, "loginWithEmail:success")
                     Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
                     savedPrefManager.putLogin(true)
+                    showItem()
+                    savedPrefManager.putEmail(email)
                     Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
                         .navigate(R.id.action_login_to_profileFragment)
                 } else {

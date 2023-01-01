@@ -43,7 +43,7 @@
         app:itemIconTint="@color/black"
         android:layout_gravity="start"
         app:itemTextColor="@color/black"
-        android:backgroundTint="@color/background"
+        android:backgroundTint="@color/light_yellow"
         android:fitsSystemWindows="true"
         app:menu="@menu/drawer_menu" >
         <LinearLayout

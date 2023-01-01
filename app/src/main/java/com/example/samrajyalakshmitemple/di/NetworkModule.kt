@@ -21,17 +21,16 @@ object NetworkModule {
     init {
        val token = "Bearer ${ApplicationClass().getToken()}"
 
-        val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(Interceptor { chain ->
-            val newRequest: Request = chain.request().newBuilder()
-                .addHeader("Authorization", "Bearer $token")
-                .build()
-            chain.proceed(newRequest)
-        }).build()
+//        val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(Interceptor { chain ->
+//            val newRequest: Request = chain.request().newBuilder()
+//                .addHeader("Authorization", "Bearer $token")
+//                .build()
+//            chain.proceed(newRequest)
+//        }).build()
 
         retrofit = Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
             .build()
     }
 

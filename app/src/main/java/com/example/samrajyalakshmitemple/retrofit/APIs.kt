@@ -52,7 +52,7 @@ interface APIs {
     @PATCH("user/{email}")
     suspend fun signUpUser(
         @Path("email")email2:String,
-        @Part("name")name:String,
+        @Field("name")name:String,
     ): Response<EditProfileResponse>
 
 }
