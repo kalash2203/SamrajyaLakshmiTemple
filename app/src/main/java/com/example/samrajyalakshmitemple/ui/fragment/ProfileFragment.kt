@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.samrajyalakshmitemple.databinding.FragmentProfileBinding
+import com.example.samrajyalakshmitemple.ui.ApplicationClass
 import com.example.samrajyalakshmitemple.utils.GlideLoader
 import com.example.samrajyalakshmitemple.viewModelFactory.ShowMyProfileViewModelFactory
 
@@ -33,6 +34,8 @@ class ProfileFragment :BaseFragment<FragmentProfileBinding>() {
                     it.data?.role,
                     it.data?.img
                 )
+                savedPrefManager.putToken(it.token)
+                ApplicationClass().setToken(savedPrefManager.getToken()!!)
                 binding?.txtCityField?.text = it.data?.city
                 binding?.txtNameField?.text = it.data?.name
                 binding?.txtEmailField?.text = it.data?.email

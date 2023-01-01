@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.samrajyalakshmitemple.databinding.FragmentHomeBinding
+import com.example.samrajyalakshmitemple.ui.ApplicationClass
 import com.example.samrajyalakshmitemple.ui.adapter.GetStartedSliderAdapter
 import com.example.samrajyalakshmitemple.viewmodels.HomeViewModel
 import java.util.*
@@ -22,6 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun setup() {
 
         homeViewModel.setViewPagerList()
+        ApplicationClass().setToken(savedPrefManager.getToken()!!)
 
 
         homeViewModel.viewPagerLive1.observe(viewLifecycleOwner) {

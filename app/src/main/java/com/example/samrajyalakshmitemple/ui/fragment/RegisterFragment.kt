@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.databinding.FragmentRegisterBinding
+import com.example.samrajyalakshmitemple.ui.ApplicationClass
 import com.example.samrajyalakshmitemple.viewModelFactory.RegisterViewModelFactory
 import com.example.samrajyalakshmitemple.viewModelFactory.ShowMyProfileViewModelFactory
 import com.example.samrajyalakshmitemple.viewmodels.RegisterViewModel
@@ -70,6 +71,7 @@ import com.google.firebase.auth.FirebaseUser
              if(it.message=="user created success")
              {
                  savedPrefManager.putToken(it.token)
+                 ApplicationClass().setToken(savedPrefManager.getToken()!!)
                  registerViewModel.signUpUser(email,binding?.edtName?.text?.trim().toString())
              }
          })
