@@ -1,20 +1,13 @@
 package com.example.samrajyalakshmitemple.ui.fragment
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.databinding.FragmentMyDonationsBinding
-import com.example.samrajyalakshmitemple.databinding.FragmentUserPanelBinding
-import com.example.samrajyalakshmitemple.ui.adapter.DonationRecordAdapter
 import com.example.samrajyalakshmitemple.ui.adapter.MyDonationAdapter
 import com.example.samrajyalakshmitemple.viewModelFactory.MyDonationRecordViewModelFactory
-import com.example.samrajyalakshmitemple.viewModelFactory.ShowUserPanelRecordViewModelFactory
 import com.example.samrajyalakshmitemple.viewmodels.MyDonationRecordViewModel
 
 class MyDonationsFragment : BaseFragment<FragmentMyDonationsBinding>() {

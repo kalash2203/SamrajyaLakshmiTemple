@@ -1,5 +1,4 @@
 package com.example.samrajyalakshmitemple.ui.fragment
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
- class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     val TAG="LoginFragment"
     private lateinit var auth: FirebaseAuth
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
@@ -47,6 +46,7 @@ import com.google.firebase.auth.FirebaseAuth
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "loginWithEmail:success")
                     Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    savedPrefManager.putLogin(true)
                     Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
                         .navigate(R.id.action_login_to_profileFragment)
                 } else {
@@ -89,7 +89,7 @@ import com.google.firebase.auth.FirebaseAuth
                     // Show the toast message and finish the forgot password activity to go back to the login screen.
                     Toast.makeText(
                         requireContext(),
-                        "Email sent sucessfully",
+                        "Email sent successfully",
                         Toast.LENGTH_LONG
                     ).show()
 

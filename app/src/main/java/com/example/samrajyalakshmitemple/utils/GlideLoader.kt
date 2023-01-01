@@ -2,8 +2,6 @@ package com.example.samrajyalakshmitemple.utils
 
 import android.content.Context
 import android.widget.ImageView
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.widget.ImageViewCompat
 import com.bumptech.glide.Glide
 import okio.IOException
 

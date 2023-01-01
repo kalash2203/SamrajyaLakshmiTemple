@@ -4,10 +4,10 @@ package com.example.samrajyalakshmitemple.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.media.Image
 import com.example.samrajyalakshmitemple.utils.Constants.EMAIL
 import com.example.samrajyalakshmitemple.utils.Constants.ISLOGIN
 import com.example.samrajyalakshmitemple.utils.Constants.NAME
+import com.example.samrajyalakshmitemple.utils.Constants.ROLE
 import com.example.samrajyalakshmitemple.utils.Constants.TOKEN
 
 
@@ -23,6 +23,15 @@ SavedPrefManager(context: Context?) {
     }
     fun putLogin(isLogin : Boolean) {
         editor?.putBoolean(ISLOGIN, isLogin)
+        editor?.apply()
+    }
+    fun checkRole():String?
+    {
+        return  sharedPreferences!!.getString(ROLE,Constants.USER)
+    }
+
+    fun putRole(role: String) {
+        editor?.putString(ROLE, role)
         editor?.apply()
     }
     fun putUserDetails(name:String?,email:String?,phone:String?,city:String?,country:String?,role:String?,image:String?){

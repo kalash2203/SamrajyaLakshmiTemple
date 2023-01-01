@@ -1,5 +1,4 @@
 package com.example.samrajyalakshmitemple.di
-import com.example.samrajyalakshmitemple.retrofit.APIs
 import com.example.samrajyalakshmitemple.retrofit.APIsTwo
 import com.example.samrajyalakshmitemple.utils.Constants
 import okhttp3.OkHttpClient

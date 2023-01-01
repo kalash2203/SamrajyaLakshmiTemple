@@ -3,12 +3,10 @@ package com.example.samrajyalakshmitemple.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.example.samrajyalakshmitemple.databinding.ItemUserPanelBinding
 import com.example.samrajyalakshmitemple.models.Data4
-import com.example.samrajyalakshmitemple.models.GetStartedSlider
 import com.example.samrajyalakshmitemple.utils.ChangeRoleInterface
 
 

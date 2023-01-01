@@ -5,13 +5,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.samrajyalakshmitemple.databinding.FragmentRegisterBinding
 import com.example.samrajyalakshmitemple.databinding.FragmentUserPanelBinding
 import com.example.samrajyalakshmitemple.ui.adapter.UserPanelAdapter
 import com.example.samrajyalakshmitemple.utils.ChangeRoleInterface
-import com.example.samrajyalakshmitemple.viewModelFactory.RegisterViewModelFactory
 import com.example.samrajyalakshmitemple.viewModelFactory.ShowUserPanelRecordViewModelFactory
-import com.example.samrajyalakshmitemple.viewmodels.RegisterViewModel
 
 
 class UserPanelFragment :  BaseFragment<FragmentUserPanelBinding>(),ChangeRoleInterface {

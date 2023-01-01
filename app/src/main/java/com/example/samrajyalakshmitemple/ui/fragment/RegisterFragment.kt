@@ -1,5 +1,4 @@
 package com.example.samrajyalakshmitemple.ui.fragment
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,13 +8,12 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.databinding.FragmentRegisterBinding
+import com.example.samrajyalakshmitemple.utils.Constants
 import com.example.samrajyalakshmitemple.viewModelFactory.RegisterViewModelFactory
-import com.example.samrajyalakshmitemple.viewModelFactory.ShowMyProfileViewModelFactory
 import com.example.samrajyalakshmitemple.viewmodels.RegisterViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
- class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
      private val registerViewModel by viewModels<RegisterViewModel> {
          RegisterViewModelFactory(repository)
      }
@@ -49,7 +47,8 @@ import com.google.firebase.auth.FirebaseUser
             //return type of addOnCompleteListener is task.
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    // Sign in success, update UI with the signed-in user's information\
+
                     Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
              registerUser(email)
                 } else {
@@ -70,6 +69,8 @@ import com.google.firebase.auth.FirebaseUser
              if(it.message=="user created success")
              {
                  savedPrefManager.putToken(it.token)
+                 savedPrefManager.putLogin(true)
+                 savedPrefManager.putRole(Constants.USER)
                  registerViewModel.signUpUser(email,binding?.edtName?.text?.trim().toString())
              }
          })

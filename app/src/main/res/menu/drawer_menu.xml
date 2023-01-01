@@ -15,6 +15,13 @@
                 <item
                     android:id="@+id/my_donation"
                     android:title="MY DONATION" />
+                <item
+                    android:id="@+id/donation_record"
+                    android:title="DONATION RECORD" />
+
+                <item
+                    android:id="@+id/user_panel"
+                    android:title="USER PANEL" />
             </group>
         </menu>
     </item>
@@ -49,12 +56,5 @@
             </group>
         </menu>
 </item>
-    <item
-        android:id="@+id/login"
-        android:actionLayout="@layout/lyt_login_btn"
-        android:title="LOGIN"/>
-    <item
-        android:id="@+id/sign_out"
-        android:actionLayout="@layout/lyt_signout_btn"
-        android:title="SIGN OUT"/>
+
 </menu>

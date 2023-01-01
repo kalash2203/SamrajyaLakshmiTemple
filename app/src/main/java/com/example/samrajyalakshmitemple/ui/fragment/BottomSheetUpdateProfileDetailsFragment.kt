@@ -19,7 +19,6 @@ import androidx.lifecycle.Observer
 import com.example.samrajyalakshmitemple.databinding.FragmentBottomSheetUpdateProfileDetailsBinding
 import com.example.samrajyalakshmitemple.repository.Repository
 import com.example.samrajyalakshmitemple.utils.Constants
-import com.example.samrajyalakshmitemple.utils.ConverterUtil
 import com.example.samrajyalakshmitemple.utils.GlideLoader
 import com.example.samrajyalakshmitemple.utils.SavedPrefManager
 import com.example.samrajyalakshmitemple.viewModelFactory.UpdateViewModelFactory
