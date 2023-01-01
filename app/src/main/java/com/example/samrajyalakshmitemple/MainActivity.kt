@@ -13,6 +13,12 @@ import com.example.samrajyalakshmitemple.utils.Constants
 import com.example.samrajyalakshmitemple.utils.Constants.PUBLISHABLE_KEY_STRIPE_DEBUG
 import com.example.samrajyalakshmitemple.utils.SavedPrefManager
 import com.stripe.android.PaymentConfiguration
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.samrajyalakshmitemple.ui.fragment.HomeFragment
+import com.example.samrajyalakshmitemple.ui.fragment.LoginFragment
+import com.example.samrajyalakshmitemple.utils.Constants.USER
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,7 +47,8 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.donations,R.id.about,R.id.home,R.id.pooja,R.id.login,R.id.info,R.id.contact),
+            setOf(R.id.donations,R.id.about,R.id.home,R.id.pooja,R.id.login,R.id.info,R.id.contact,R.id.my_profile,R.id.user_panel
+            ,R.id.donation_record,R.id.my_donation),
             binding!!.drawerLayout
         )
         NavigationUI.setupActionBarWithNavController(
@@ -53,9 +60,9 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(binding!!.navView, navController)
 
-
         hideItem()
         setLoginLogoutBtn()
+
 
     }
 
@@ -74,9 +81,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setLoginLogoutBtn(){
         if (savedPrefManager.isLogin()) {
-
+                 binding?.loginSignoutBtn?.text="Sign Out"
         }else{
-
+                binding?.loginSignoutBtn?.text="Login"
         }
     }
 

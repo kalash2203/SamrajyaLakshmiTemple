@@ -13,6 +13,7 @@ import com.example.samrajyalakshmitemple.repository.Repository
 import com.example.samrajyalakshmitemple.utils.Constants
 import com.example.samrajyalakshmitemple.utils.SavedPrefManager
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 abstract class BaseFragment<T: ViewBinding>  : Fragment() {
     protected var binding: T? = null
@@ -40,6 +41,7 @@ abstract class BaseFragment<T: ViewBinding>  : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         savedPrefManager = SavedPrefManager(requireContext())
         setup()
+
     }
 
     abstract fun setup()
@@ -84,4 +86,23 @@ abstract class BaseFragment<T: ViewBinding>  : Fragment() {
             }
         }
     }
+
+    open fun hideItem() {
+        if (!savedPrefManager.isLogin()) {
+            val view5 = requireActivity().findViewById<NavigationView>(R.id.nav_view)
+            view5?.menu?.findItem(R.id.dashboard)?.isVisible = false
+            if (savedPrefManager.checkRole()== Constants.USER){
+                view5?.menu?.findItem(R.id.donation_record)?.isVisible = false
+                view5?.menu?.findItem(R.id.user_panel)?.isVisible = false
+            }else {
+                view5?.menu?.findItem(R.id.donation_record)?.isVisible = true
+                view5?.menu?.findItem(R.id.user_panel)?.isVisible = true
+            }
+        }
+    }
+
+
+
+
+
 }

@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.samrajyalakshmitemple.R
 import com.example.samrajyalakshmitemple.databinding.FragmentAboutUsBinding
 import com.example.samrajyalakshmitemple.ui.adapter.GetStartedSliderAdapter
 import com.example.samrajyalakshmitemple.viewmodels.AboutUsViewModel
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
 
@@ -41,6 +46,18 @@ class AboutUsFragment : BaseFragment<FragmentAboutUsBinding>() {
             }
         }
 
+        val view5 = requireActivity().findViewById<MaterialButton>(R.id.login_signout_btn)
+        view5?.setOnClickListener {
+            if (!savedPrefManager.isLogin()){
+                Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
+                    .navigate(R.id.action_about_to_login)
+            }else{
+                savedPrefManager.putLogin(false)
+                savedPrefManager.putToken("")
+                FirebaseAuth.getInstance().signOut()
+                hideItem()
+            }
+        }
 
     }
 

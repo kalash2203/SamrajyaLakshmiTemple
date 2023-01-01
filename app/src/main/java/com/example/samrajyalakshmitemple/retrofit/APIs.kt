@@ -10,7 +10,7 @@ interface APIs {
     @PUT("user/admin/{email}")
     suspend fun changeRole(
         @Path("email")email:String?,
-        @Field("role") role: String
+        @Field("role") role: String,
     ): Response<MakeAdminResponse>
 
     @DELETE("user/{id}")
@@ -52,7 +52,7 @@ interface APIs {
     @PATCH("user/{email}")
     suspend fun signUpUser(
         @Path("email")email2:String,
-        @Part("name")name:String,
+        @Field("name")name:String,
     ): Response<EditProfileResponse>
 
 }
