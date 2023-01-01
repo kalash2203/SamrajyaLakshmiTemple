@@ -62,8 +62,6 @@ class MainActivity : AppCompatActivity() {
 
         hideItem()
         setLoginLogoutBtn()
-
-
     }
 
     private fun hideItem() {
